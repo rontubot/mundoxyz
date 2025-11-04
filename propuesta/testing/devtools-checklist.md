@@ -1,0 +1,22 @@
+# Checklist Chrome DevTools (MUNDOXYZ)
+
+- **[Consola]** Cargar `/games` y verificar:
+  - `window.__SENTRY_DSN__` definido.
+  - Sin errores CSP o CORS.
+  - Sin `X-Frame-Options` bloqueando WebApp.
+- **[Red]** Navegar a `/api/economy/supply/stream`:
+  - Evento SSE activo, heartbeats cada ~15s.
+  - Reintentos correctos si hay cortes.
+- **[Red]** `POST /api/auth/login-telegram` (simulado):
+  - 200 con set-cookie `sid` y `uid`/`uidp`.
+  - Sin redirecciones inesperadas.
+- **[Red]** `GET /api/roles/me`:
+  - Respuesta 200 con lista de roles.
+- **[Red]** `POST /api/economy/fire-requests/create`:
+  - 200 y notificación enviada (si `TELEGRAM_BOT_TOKEN` y `FIRE_REQUEST_ADMIN_TG_ID`).
+- **[Red]** `GET /api/market/redeems/pending` (tote/admin):
+  - 200 con items o vacío.
+- **[Performance]**
+  - Lighthouse básico: TTI dentro de lo aceptable.
+- **[Storage]**
+  - Cookies `uid` y `uidp` presentes con `SameSite=None; Secure` (y `Partitioned` para `uidp`).

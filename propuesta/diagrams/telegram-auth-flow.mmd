@@ -1,0 +1,10 @@
+```mermaid
+sequenceDiagram
+  participant TG as Telegram WebApp
+  participant FE as Frontend
+  participant BE as Backend
+  FE->>BE: POST /api/auth/login-telegram (initData)
+  BE-->>BE: verifyTelegramInitData + anti-replay + freshness
+  BE->>FE: Set-Cookie sid; { sid, userId }
+  FE->>BE: Subsecuentes GET con cookies o x-session-id
+```

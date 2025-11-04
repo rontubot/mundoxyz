@@ -1,0 +1,13 @@
+```mermaid
+erDiagram
+  users ||--o{ wallets : has
+  wallets ||--o{ wallet_transactions : records
+  users ||--o{ user_roles : has
+  roles ||--o{ user_roles : in
+  users ||--o{ connection_logs : logs
+  welcome_events ||--o{ welcome_event_claims : claims
+  raffles ||--o{ raffle_numbers : has
+  raffles ||--o{ raffle_participants : has
+  bingo_rooms ||--o{ bingo_players : has
+  bingo_players ||--o{ bingo_cards : has
+```

@@ -1,0 +1,71 @@
+### Health
+GET http://localhost:3000/health
+
+### DB Health
+GET http://localhost:3000/api/db/health
+
+### Config JS
+GET http://localhost:3000/config.js
+
+### Roles (me)
+GET http://localhost:3000/api/roles/me
+x-session-id: {{sid}}
+
+### Login Telegram (simulado)
+POST http://localhost:3000/api/auth/login-telegram
+Content-Type: application/json
+
+{ "initData": "<initData>" }
+
+### Supply snapshot
+GET http://localhost:3000/api/economy/supply
+
+### Supply export CSV
+GET http://localhost:3000/api/economy/supply/txs-db/export.csv
+
+### Fire Request: create
+POST http://localhost:3000/api/economy/fire-requests/create
+Content-Type: application/json
+x-session-id: {{sid}}
+
+{ "userId": "tg:123", "amount": 50, "reference": "prueba" }
+
+### Fire Requests: pending (tote/admin)
+GET http://localhost:3000/api/economy/fire-requests/pending
+x-admin-username: {{admin_user}}
+x-admin-code: {{admin_code}}
+
+### Fire Request: accept (tote/admin)
+POST http://localhost:3000/api/economy/fire-requests/{{id}}/accept
+x-admin-username: {{admin_user}}
+x-admin-code: {{admin_code}}
+
+### Market: redeem 100 🔥
+POST http://localhost:3000/api/market/redeem-100-fire
+Content-Type: application/json
+x-session-id: {{sid}}
+
+{ "userId": "tg:123", "cedula": "V12345678", "telefono": "+584121234567", "bankCode": "0102", "bankName": "Venezolano de Crédito" }
+
+### Market: pending
+GET http://localhost:3000/api/market/redeems/pending
+x-admin-username: {{admin_user}}
+x-admin-code: {{admin_code}}
+
+### Market: accept
+POST http://localhost:3000/api/market/redeems/{{id}}/accept
+x-admin-username: {{admin_user}}
+x-admin-code: {{admin_code}}
+
+### Admin Welcome: list
+GET http://localhost:3000/api/admin/welcome/events
+x-admin-username: {{admin_user}}
+x-admin-code: {{admin_code}}
+
+### Admin Welcome: create
+POST http://localhost:3000/api/admin/welcome/events
+Content-Type: application/json
+x-admin-username: {{admin_user}}
+x-admin-code: {{admin_code}}
+
+{ "name": "Bienvenida QA", "message": "Bienvenido a MUNDOXYZ", "coins": 100, "fires": 10, "durationHours": 72 }
