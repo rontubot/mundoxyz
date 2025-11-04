@@ -1,0 +1,19 @@
+{
+  "short_name": "MUNDOXYZ",
+  "name": "MUNDOXYZ - Telegram MiniApp",
+  "description": "MiniApp de Telegram con juegos y economía dual",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0B0E14",
+  "background_color": "#0B0E14",
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["games", "entertainment"]
+}

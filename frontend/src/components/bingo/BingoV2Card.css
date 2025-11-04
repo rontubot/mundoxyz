@@ -1,0 +1,196 @@
+.bingo-v2-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bingo-v2-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bingo-v2-card .card-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.bingo-button {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.bingo-button.animated {
+  animation: glow 1s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.6);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+  }
+}
+
+.bingo-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+}
+
+/* 75-Ball Card Styles */
+.bingo-card-75 .card-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.header-cell {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+}
+
+.bingo-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  user-select: none;
+}
+
+.bingo-cell:hover:not(.empty):not(.marked) {
+  background: #e9ecef;
+  transform: scale(1.05);
+}
+
+.bingo-cell.highlighted {
+  background: #fff3cd;
+  border-color: #ffc107;
+  animation: highlight 0.5s;
+}
+
+@keyframes highlight {
+  0% {
+    transform: scale(1);
+    background: #fff3cd;
+  }
+  50% {
+    transform: scale(1.1);
+    background: #ffd700;
+  }
+  100% {
+    transform: scale(1);
+    background: #fff3cd;
+  }
+}
+
+.bingo-cell.marked {
+  background: #28a745;
+  color: white;
+  border-color: #1e7e34;
+}
+
+.bingo-cell.free {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bingo-cell.empty {
+  background: #e9ecef;
+  cursor: default;
+}
+
+.mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+/* 90-Ball Card Styles */
+.bingo-card-90 .card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bingo-card-90 .card-row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2px;
+}
+
+.bingo-card-90 .bingo-cell {
+  min-height: 40px;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bingo-v2-card {
+    padding: 15px;
+  }
+
+  .bingo-cell {
+    font-size: 0.9rem;
+  }
+
+  .header-cell {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .bingo-button {
+    padding: 8px 20px;
+    font-size: 1rem;
+  }
+
+  .mark {
+    font-size: 1.5rem;
+  }
+}
