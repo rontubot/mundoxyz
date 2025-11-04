@@ -1,0 +1,6 @@
+fix: códigos numéricos 6 dígitos y corrección frontend BingoRoom
+
+- PostgreSQL: generate_unique_bingo_room_code() ahora genera códigos numéricos (100000-999999)
+- Frontend: BingoRoom.js corregido para procesar room data correctamente
+- React Query V5: useQuery devuelve response.data.room directamente
+- UI: BingoWaitingRoom debe mostrarse para status='lobby'

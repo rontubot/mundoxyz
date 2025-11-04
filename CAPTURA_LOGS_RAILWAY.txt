@@ -1,0 +1,60 @@
+=== INSTRUCCIONES PARA CAPTURAR LOGS ===
+
+MÉTODO 1: COPIAR TEXTO (RECOMENDADO)
+=====================================
+
+1. Ve a Railway logs
+2. Haz scroll hasta encontrar logs recientes (después de presionar BINGO)
+3. Selecciona TODO el texto desde "🎯 CALL BINGO" o "🎲 [SOCKET] BINGO cantado"
+4. Copia (Ctrl+C)
+5. Pega aquí en un archivo de texto o en el chat
+
+MÉTODO 2: BUSCAR PALABRAS CLAVE
+================================
+
+En Railway logs, presiona Ctrl+F y busca CADA UNA de estas frases:
+
+1. "PARSEO DE MARKED_NUMBERS"
+2. "RESULTADO DE VALIDACIÓN"
+3. "RETORNANDO BINGO VÁLIDO"
+4. "Emitiendo bingo:game_over"
+5. "BINGO INVÁLIDO"
+
+Si encuentras CUALQUIERA de estas, toma screenshot CLARO de esa sección.
+
+MÉTODO 3: DEVTOOLS DEL NAVEGADOR
+=================================
+
+1. Con el juego abierto, presiona F12
+2. Ve a pestaña "Console"
+3. Presiona el botón "¡BINGO!" del modal
+4. En Console busca:
+   - "🏆 [FRONTEND] Evento bingo:game_over recibido"
+   - Cualquier mensaje de error en rojo
+
+5. Toma screenshot del Console completo
+
+INFORMACIÓN CRÍTICA QUE NECESITO:
+=================================
+
+A) ¿Presionaste el botón "¡BINGO!" en el modal? (Sí/No)
+
+B) ¿Apareció un toast/mensaje "Validando BINGO..."? (Sí/No)
+
+C) ¿El modal desapareció o sigue ahí? (Desapareció/Sigue ahí)
+
+D) Deployment actual en Railway:
+   - Ve a Railway → Deployments
+   - ¿Cuál es el commit del último deployment?
+   - Debe ser: c18d18c
+
+E) Console del navegador (F12):
+   - ¿Hay algún error en rojo?
+   - ¿Aparece "🏆 [FRONTEND] Evento bingo:game_over"?
+
+=== IMPORTANTE ===
+
+Sin esta información específica, no puedo diagnosticar el problema.
+Los screenshots que compartiste no tienen suficiente resolución para leer los logs.
+
+Por favor, usa MÉTODO 1 (copiar texto) o MÉTODO 3 (DevTools F12).

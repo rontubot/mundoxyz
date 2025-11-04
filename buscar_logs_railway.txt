@@ -1,0 +1,35 @@
+=== INSTRUCCIONES PARA BUSCAR EN LOGS DE RAILWAY ===
+
+1. Ve a Railway dashboard: https://railway.app
+2. Login y selecciona el proyecto
+3. Click en el deployment activo
+4. Click "View Logs"
+5. Usa Ctrl+F para buscar cada una de estas frases:
+
+BUSCAR ESTAS FRASES (en orden):
+
+1. "🎯 CALL BINGO INICIADO"
+   → Si NO aparece: El backend no recibió la llamada
+
+2. "✅ Números marcados parseados"
+   → Ver el objeto completo que aparece después
+   → IMPORTANTE: ¿count es 5 o 17?
+   → IMPORTANTE: ¿isArray es true o false?
+
+3. "📊 Resultado de validación"
+   → Ver: ¿isValid es true o false?
+
+4. Buscar UNO de estos dos:
+   - "❌ BINGO INVÁLIDO"
+   - "✅ BINGO VÁLIDO"
+
+5. "🏆 [SOCKET] Emitiendo bingo:game_over"
+   → Si NO aparece: El backend no está emitiendo el evento
+
+===================================================
+
+COPIA TODO EL BLOQUE desde "🎯 CALL BINGO" hasta el resultado.
+
+O toma screenshot del bloque completo.
+
+Sin estos logs NO puedo identificar qué está fallando.
